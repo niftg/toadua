@@ -9,7 +9,7 @@
     "js-levenshtein": "^1.1.6",
     "lodash": "^4.17.11",
     "lowdb": "^1.0.0",
-    "npm": "^6.9.0",
+    "npm": "^6.9.2",
     "object.fromentries": "^2.0.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
@@ -20,7 +20,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "true",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "node ./postinstall_scripts/get_vue.js"
   },
   "repository": {
     "type": "git",

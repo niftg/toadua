@@ -74,10 +74,10 @@ function handler(r, s) {
 let server = http.createServer(handler);
 server.listen(59138);
 process.stderr.write('Server started!\n');
-let sync_int;
+/* let sync_int;
 hk.sync(api).then(() => {
   sync_int = setInterval(() => hk.sync(api), 3 * 60 * 1000);
-});
+}); */ // no use of sync function
 let backup_int    = setInterval(() => hk.backup(api),            1 * 60 * 1000);
 let obsoleted_int = setInterval(() => hk.remove_obsoleted(api), 10 * 60 * 1000);
 

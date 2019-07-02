@@ -1,5 +1,5 @@
 module.exports = {
-  backup, sync, remove_obsoleted
+  backup, /*sync,*/ remove_obsoleted
 };
 
 const http = require('http'),
@@ -24,7 +24,7 @@ function backup(api) {
   }
 }
 
-const URLS = require('./URLS.json');
+/* const URLS = require('./URLS.json'); */ // no use of sync function
 const PATTERNS = {
          a_examples: e => [[e[1], `(${e[0]}) ${e[2]}`]],
          b_examples: e => [[e[1], `(${e[0]}) ${e[2]}`]],
