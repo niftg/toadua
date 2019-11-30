@@ -176,10 +176,11 @@ app = new Vue({
           return negative ? ['not', what] : what;
         }));
       }));
+      // strip the unneeded `and` and `or`
       var beheadable = e =>
         typeof e == "object" && e.length == 2 && e[0].match(/(^and$)|(^or$)/);
       var beheadwalk = e => {
-        var subst = beheadable(e) ? (subst = e[1]) : (subst = e);
+        var subst = beheadable(e) ? e[1] : e;
         return typeof subst == "object" ? subst.map(beheadwalk) : subst;
       };
       return longish.map(beheadwalk);
